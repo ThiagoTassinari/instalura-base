@@ -26,7 +26,7 @@ export const Button = styled.button`
     border-radius: 0.8rem;
     ${({ghost}) => (ghost ? ButtonGhost : ButtonDefault)}; // Utilizando operador ternário
     transition: opacity ${({ theme }) => theme.transition};
-    border-radius: ${(props) => props.theme.border-radius};
+    border-radius: ${(props) => props.theme.borderRadius};
     &:hover,
     &:focus {
         opacity: .5;
