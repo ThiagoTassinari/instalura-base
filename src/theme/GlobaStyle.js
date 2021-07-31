@@ -9,14 +9,12 @@ export const GlobalStyle = createGlobalStyle`
 
     ${normalize}
 
-    html,
     body {
         margin: 0;
         padding: 0;
         font-family: ${({ theme }) => theme.fontFamily};
     }
 
-    / * Full height layout */
     html, body {
         display: flex;
         min-height: 100vh;
@@ -24,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     #__next {
         flex: 1;
-        display: felx;
+        display: flex;
         flex-direction: column;
     }
 `
