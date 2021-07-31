@@ -1,5 +1,6 @@
 import React from "react";
 import { Logo } from "../../../theme/Logo";
+import { Button } from "../Button";
 import { MenuWrapper } from "./styles/MenuWrapper";
 
 export default function Menu() {
@@ -26,7 +27,7 @@ return (
     <MenuWrapper.CentralSide>
         {links.map((link) => {
             return (
-                <li>
+                <li key={link.url}> {/* O react está identificando e organizando por meio dessa key todas instâncias dessa lista */}
                     <a href={link.url}>
                         {link.texto}
                     </a>
@@ -35,12 +36,12 @@ return (
         })}
     </MenuWrapper.CentralSide>
     <MenuWrapper.RightSide>
-        <button>
+        <Button ghost variant="secondary.main"> {/* O ghost é uma props que chamei dessa forma, onde utilizarei para fazer o styled component do meu botão*/}
             Entrar
-        </button>
-        <button>
+        </Button>
+        <Button variant="primary.main">
             Cadastrar
-        </button>
+        </Button>
     </MenuWrapper.RightSide>
     </MenuWrapper>
     )
