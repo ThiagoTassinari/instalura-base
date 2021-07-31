@@ -1,6 +1,6 @@
-import { GlobalStyle } from '../src/theme/GlobaStyle';
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from '../src/theme';
+import { GlobalStyle } from '../src/theme/GlobaStyle';
 import Head from 'next/head';
 
 export default function App({ Component, pageProps }) {
