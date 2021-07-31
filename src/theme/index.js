@@ -42,5 +42,6 @@ export const colors = {
 export default {
     colors,
     borderRadius: '0.8rem',
+    fontFamily: '\'Rubik\', sans-serif',
     transition: '200ms ease-in-out',
 };
