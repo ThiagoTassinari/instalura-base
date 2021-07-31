@@ -41,6 +41,6 @@ export const colors = {
 
 export default {
     colors,
-    borderRadius: '1.2rem',
+    borderRadius: '0.8rem',
     transition: '200ms ease-in-out',
 };
