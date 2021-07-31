@@ -36,10 +36,10 @@ return (
         })}
     </MenuWrapper.CentralSide>
     <MenuWrapper.RightSide>
-        <Button ghost> {/* O ghost é uma props que chamei dessa forma, onde utilizarei para fazer o styled component do meu botão*/}
+        <Button ghost variant="secondary.main"> {/* O ghost é uma props que chamei dessa forma, onde utilizarei para fazer o styled component do meu botão*/}
             Entrar
         </Button>
-        <Button>
+        <Button variant="primary.main">
             Cadastrar
         </Button>
     </MenuWrapper.RightSide>
