@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css }  from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const TestStyleVariantsMap = {
     paragraph1: css`
@@ -28,6 +29,12 @@ export default function Text({ tag, variant, children }) {
             {children}
         </TextBase>
     );
+}
+
+Text.propTypes = {
+    tag: PropTypes.string.isRequired,
+    variant: PropTypes.string,  // Já está sendo chamado por default no arq. theme/typographyVariants.js
+    children: PropTypes.node.isRequired
 }
 
 Text.defaultProps = {
