@@ -26,6 +26,8 @@ export const Button = styled.button`
     opacity: 1;
     border-radius: 0.8rem;
 
+
+
     ${TestStyleVariantsMap.smallestException}
 
     ${({ghost}) => (ghost ? ButtonGhost : ButtonDefault)}; // Utilizando operador ternário
@@ -35,6 +37,32 @@ export const Button = styled.button`
     &:focus {
         opacity: .5;
     }
+
+    ${breakpointsMedia({
+        xs: css`
+            /* All devices */
+        `,
+        md: css `
+            /* From md breakpoint */
+        `,
+                lg: css `
+            /* From lg breakpoint */
+        `,
+    })}
+
+    ${function(props) {
+        console.log('Button', props.theme.breakpoints);
+
+        return `
+            @media screen and (min-width: ${props.theme.breakpoints.xs}px) {
+                background: red !important;
+            }
+
+            @media screen and (min-width: ${props.theme.breakpoints.sm}px) {
+                background: red !important;
+            }
+        `
+    }}
 `;
 
 /* ------------------------------- Utilizando condicional if---------------------------------
@@ -46,3 +74,4 @@ export const Button = styled.button`
         return ButtonDefault;
     }} 
 ---------------------------------------------------------------------------------------------*/
+

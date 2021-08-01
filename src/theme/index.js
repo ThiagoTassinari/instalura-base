@@ -44,6 +44,14 @@ const colors = {
 export default {
     colors,
     typographyVariants,
+    breakpoints: {
+        xs: 0,      // xtreme small
+        sm: 480,    // small
+        md: 768,    // medium
+        lg: 992,    // large
+        xl: 1200,   // xtreme large
+        xxl: 1400   // xtreme xtreme large
+    },
     borderRadius: '0.8rem',
     fontFamily: '\'Rubik\', sans-serif',
     transition: '200ms ease-in-out',
