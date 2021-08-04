@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import get from "lodash/get";
 import { TestStyleVariantsMap } from "../../foundation/Text";
+import { breakpointsMedia } from '../../../theme/Utils/breakpointsMedia'
 
 const ButtonGhost = css`
     color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
@@ -26,10 +27,6 @@ export const Button = styled.button`
     opacity: 1;
     border-radius: 0.8rem;
 
-
-
-    ${TestStyleVariantsMap.smallestException}
-
     ${({ghost}) => (ghost ? ButtonGhost : ButtonDefault)}; // Utilizando operador ternário
     transition: opacity ${({ theme }) => theme.transition};
     border-radius: ${(props) => props.theme.borderRadius};
@@ -41,31 +38,16 @@ export const Button = styled.button`
     ${breakpointsMedia({
         xs: css`
             /* All devices */
+            ${TestStyleVariantsMap.smallestException}
         `,
         md: css `
             /* From md breakpoint */
-        `,
-                lg: css `
-            /* From lg breakpoint */
+            ${TestStyleVariantsMap.paragraph1}
         `,
     })}
-
-    ${function(props) {
-        console.log('Button', props.theme.breakpoints);
-
-        return `
-            @media screen and (min-width: ${props.theme.breakpoints.xs}px) {
-                background: red !important;
-            }
-
-            @media screen and (min-width: ${props.theme.breakpoints.sm}px) {
-                background: red !important;
-            }
-        `
-    }}
 `;
 
-/* ------------------------------- Utilizando condicional if---------------------------------
+    /* ------------------------------- Utilizando condicional if---------------------------------
 
     ${function(props) {
         if (props.ghost) {
@@ -73,5 +55,4 @@ export const Button = styled.button`
         }
         return ButtonDefault;
     }} 
----------------------------------------------------------------------------------------------*/
-
+--------------------------------------------------------------------------------------------- */
